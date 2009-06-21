@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RayTracing", "RayTracing\RayTracing.vcproj", "{ED65CB4C-3B11-4B31-AA88-763B85E02B4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED65CB4C-3B11-4B31-AA88-763B85E02B4D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ED65CB4C-3B11-4B31-AA88-763B85E02B4D}.Debug|Win32.Build.0 = Debug|Win32
+		{ED65CB4C-3B11-4B31-AA88-763B85E02B4D}.Release|Win32.ActiveCfg = Release|Win32
+		{ED65CB4C-3B11-4B31-AA88-763B85E02B4D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
