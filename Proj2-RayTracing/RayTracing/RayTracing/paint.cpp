@@ -35,10 +35,14 @@ void drawing::clear(unsigned color)
 		}
 }
 
-void drawing::init() 
+void drawing::init(int frame) 
 {
-	nPrim = 9;
-	prim = new primitive* [nPrim];
+	float diff = (float)frame / 2.0f;
+	if(frame < 6)
+		nPrim = frame+3;
+	else
+		nPrim = 9;
+	prim = new primitive* [20];
 
 	prim[0] = new plane(dimension3(0,1.0f,0),5.0f);
 	prim[0]->getMaterial()->setDiffuse(1.0f);
@@ -47,30 +51,30 @@ void drawing::init()
 	prim[0]->getMaterial()->setRefraction(0);
 	prim[0]->setTex();
 
-	prim[1] = new sphere( dimension3( 3.0f, 4.0f, -3.0f ), 0.01f);
+	prim[1] = new sphere( dimension3( 3.0f+diff/30, 4.0f, -3.0f ), 0.01f);
 	prim[1]->getMaterial()->setColor(color(1.0f,1.0f,1.0f));
 	((sphere*)prim[1])->setLight();
-	prim[2] = new sphere( dimension3(-3.0f,5.0f,-1.0f),0.01f);
+	prim[2] = new sphere( dimension3(-3.0f+diff/20,5.0f,-1.0f),0.01f);
 	prim[2]->getMaterial()->setColor(color(1.0f,1.0f,1.0f));
 	((sphere*)prim[2])->setLight();
 
-	prim[3] = new sphere( dimension3( 1.8f, -1.0f, 3.0f ), 2.5f);
+	prim[3] = new sphere( dimension3( 1.8f, -1.0f+diff/5, 3.0f ), 2.0f+diff/10);
 	prim[3]->getMaterial()->setColor(color(0.9f,1.0f,1.0f));
 	prim[3]->getMaterial()->setDiffuse(0.7f);
 	prim[3]->getMaterial()->setReflection(0.4f);
 	prim[3]->getMaterial()->setDiffuse(0.0f);
 	prim[3]->getMaterial()->setRefraction(1.25f);
 
-	prim[4] = new sphere(dimension3(-7.7f,-1.8f,9.0f),2);
+	prim[4] = new sphere(dimension3(-7.7f,-1.8f,9.0f),0.5*diff);
 	prim[4]->getMaterial()->setDiffuse(0.1f);
 	prim[4]->getMaterial()->setReflection(1.0f);
 	prim[4]->getMaterial()->setColor(color(0.7f,0.7f,1.0f));
 	prim[4]->getMaterial()->setRefraction(0);
 
-	prim[5] = new sphere(dimension3(-3.0f,-1.8f,5.5f),1.5f);
+	prim[5] = new sphere(dimension3(-3.0f,-1.8f,5.5f-diff/10),1.5f);
 	prim[5]->getMaterial()->setDiffuse(0.5f);
 	prim[5]->getMaterial()->setReflection(0.5f);
-	prim[5]->getMaterial()->setColor(color(0.9f,1.0f,1.0f));
+	prim[5]->getMaterial()->setColor(color(0.9f,1.0f+diff/20,1.0f));
 	prim[5]->getMaterial()->setRefraction(0);
 
 	dimension3 d[6];
@@ -80,23 +84,23 @@ void drawing::init()
 	d[3] = dimension3(0,0,1).getNormal();
 	d[4] = dimension3(-1,0,0).getNormal();
 	d[5] = dimension3(0,0,-1).getNormal();
-	float s[6] = {-3.5f,5.0f,-2.7f,4.8f,4.7f,-4.0f};
+	float s[6] = {-3.5f,5.0f+diff/10,-2.5f,4.5f-diff/10,4.5f,-4.0f};
 	prim[6] = new cube(d,s);
 	prim[6]->getMaterial()->setDiffuse(0.8f);
 	prim[6]->getMaterial()->setReflection(0.5f);
 	prim[6]->getMaterial()->setColor(color(0.9f,0.9f,0.9f));
 	prim[6]->getMaterial()->setRefraction(0);
 
-	prim[7] = new plane(dimension3(0.0f,0.0f,-1.0f),10.0f);
+	prim[7] = new plane(dimension3(0.0f,0.0f,-1.0f),10.0f+diff/30);
 	prim[7]->getMaterial()->setDiffuse(0.2f);
 	prim[7]->getMaterial()->setReflection(0.8f);
-	prim[7]->getMaterial()->setColor(color(0.5f,0.1f,0.3f));
+	prim[7]->getMaterial()->setColor(color(diff/10,0.6f,0.6f));
 	prim[7]->getMaterial()->setRefraction(0);
 
-	prim[8] = new sphere(dimension3(5.0f,-2.0f,5.5f),1.5f);
+	prim[8] = new sphere(dimension3(8.0f+diff/15,-2.0f+diff/20,5.5f),1.5f);
 	prim[8]->getMaterial()->setDiffuse(0.5f);
 	prim[8]->getMaterial()->setReflection(0.5f);
-	prim[8]->getMaterial()->setColor(color(0.9f,0.6f,0.0f));
+	prim[8]->getMaterial()->setColor(color(0.3f,0.6f,0.0f));
 	prim[8]->getMaterial()->setRefraction(0);
 
 	sx = -4 ; ex = 4;

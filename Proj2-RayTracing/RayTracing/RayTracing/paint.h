@@ -14,7 +14,7 @@ public:
 	{
 		return m_buffer; 
 	}
-	void init();
+	void init(int frame);
 	bool render();
 	primitive* raytrace(ray& _ray, color& test, int depth,float& dist,float rindex);
 private:
