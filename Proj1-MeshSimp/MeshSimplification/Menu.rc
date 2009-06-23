@@ -1,0 +1,144 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU 
+BEGIN
+    POPUP "显示(&S)"
+    BEGIN
+        MENUITEM "显示网格(&M)",                    ID_LINE
+        MENUITEM "显示模型(&F)",                    ID_FACE
+        MENUITEM "显示网格和模型(&B)",                 ID_LINE_FACE
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "版本信息(&I)",                    ID_WHAT
+        MENUITEM "快捷键说明(&A)",                   ID_HELP_KEY
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG1 DIALOGEX 0, 0, 265, 46
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "模型显示"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,208,7,50,14
+    PUSHBUTTON      "取消",IDCANCEL,208,24,50,14
+    LTEXT           "模型显示及网格简化第1版",IDC_STATIC,16,11,174,11
+    LTEXT           "作者：清华大学计60班 尹杰",IDC_STATIC,16,24,106,8
+END
+
+IDD_DIALOG2 DIALOGEX 0, 0, 203, 113
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,92,50,14
+    PUSHBUTTON      "取消",IDCANCEL,146,92,50,14
+    LTEXT           "上下箭头：上下旋转模型",IDC_STATIC,7,7,189,8
+    LTEXT           "左右箭头：左右旋转模型",IDC_STATIC,7,19,189,8
+    LTEXT           "空格键：退出",IDC_STATIC,7,79,189,8
+    LTEXT           "W、S：前后移动模型",IDC_STATIC,7,31,189,8
+    LTEXT           "D：删除一条边",IDC_STATIC,7,43,189,8
+    LTEXT           "M：显示三角形面/显示有光照效果",IDC_STATIC,7,55,189,8
+    LTEXT           "N：显示轮廓/关闭显示轮廓",IDC_STATIC,7,67,189,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 258
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_DIALOG2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 196
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 106
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
