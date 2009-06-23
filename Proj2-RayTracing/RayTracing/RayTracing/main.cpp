@@ -54,7 +54,7 @@ int main()
 		cvWaitKey(20);
 	}
 
-	//system("PAUSE");
+	system("PAUSE");
 	cvDestroyWindow( "Image" );//Ïú»Ù´°¿Ú
 	cvReleaseImage( &pImg ); //ÊÍ·ÅÍ¼Ïñ
 
