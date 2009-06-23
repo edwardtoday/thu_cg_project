@@ -10,6 +10,10 @@
 #include "Vector4.h"
 #include "Triangles.h"
 #include "resource.h"
+#include <cstdlib>
+#include "mine\materials.h"
+#include "mine\heap.h"
+#include "mine\mesh.h"
 using namespace std;
 
 #pragma comment(lib, "glu32.lib")
@@ -365,10 +369,12 @@ INT_PTR CALLBACK Dialog(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 
 void OutputUsage() {
 	cout << "输入格式：" << endl;
-	cout << "mesh_simp.exe 输入.obj -w"  << endl;
+	cout << "MeshSimp 输入.obj -w"  << endl;
 	cout << "\t\t显示相应的obj文件"  << endl;
-	cout << "mesh_simp.exe 输入.obj 输出.obj  简化比（一个小数，例如0.3）" << endl;
-	cout << "\t\t简化模型" << endl;
+	cout << "MeshSimp 输入.obj 输出.obj  简化比（一个小数，例如0.3）" << endl;
+	cout << "\t\t简化模型并显示" << endl;
+	cout << "MeshSimp 输入.obj 输出.obj  简化比（一个小数，例如0.3）-m" << endl;
+	cout << "\t\t简化模型(自己实现算法)并显示" << endl;
 }
 
 int main(int argc, char *argv[]) {
@@ -403,6 +409,30 @@ int main(int argc, char *argv[]) {
 			model.DeleteVertex();
 		}
 		model.Output(output_name);
+		model.InitializeAll(output_name);
+		hInst = GetModuleHandle(NULL);
+		__WinMain(hInst, NULL, NULL, SW_SHOW);
+	}
+	else if (argc == 5) {
+		if ((temp_c = strcmp(argv[4], "-m")) != 0)
+			OutputUsage();
+		else{
+			mesh object(argv[1]);
+
+			object.init();
+			double rate = atof(argv[3]);
+			int total=object.vSize;
+			for(int i=0;i<total*(1-rate);++i)
+			{
+				object.Delete();
+				cout<<(double)i*100/total*(1-rate)<<"\r";
+			}
+			strcpy(output_name, argv[2]);
+			object.storeObj(output_name);
+			model.InitializeAll(output_name);
+			hInst = GetModuleHandle(NULL);
+			__WinMain(hInst, NULL, NULL, SW_SHOW);
+		}
 	}
 	else {
 		OutputUsage();

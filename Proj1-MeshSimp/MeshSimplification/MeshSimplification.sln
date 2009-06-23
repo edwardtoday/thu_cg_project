@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MeshSimp", "MeshSimplification.vcproj", "{1990CEB4-C963-4783-98B5-66A6471816DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1990CEB4-C963-4783-98B5-66A6471816DD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1990CEB4-C963-4783-98B5-66A6471816DD}.Debug|Win32.Build.0 = Debug|Win32
+		{1990CEB4-C963-4783-98B5-66A6471816DD}.Release|Win32.ActiveCfg = Release|Win32
+		{1990CEB4-C963-4783-98B5-66A6471816DD}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
